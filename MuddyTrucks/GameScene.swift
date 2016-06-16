@@ -20,13 +20,7 @@ class GameScene: SKScene {
         mudLayer = childNodeWithName("MudLayer")!
 
         truckLayer.addChild(truck)
-        mudLayer.addChild(MudNode.init(size: 5.0))
-        runAction(SKAction.waitForDuration(1.0)) { 
-            self.mudLayer.addChild(MudNode.init(size: 5.0))
-            self.runAction(SKAction.waitForDuration(1.2)) {
-                self.mudLayer.addChild(MudNode.init(size: 5.0))
-            }
-        }
+        dropMudOverTruck(100, target: truck, duration: 2.0)
 
 
         physicsWorld.contactDelegate = self
@@ -46,7 +40,6 @@ class GameScene: SKScene {
 
 // MARK: - GameScene will be the delegate for SKPhysicsWorld
 extension GameScene: SKPhysicsContactDelegate {
-
     func didBeginContact(contact: SKPhysicsContact) {
         guard
             let nodeA = contact.bodyA.node as? Contactable,
@@ -66,5 +59,30 @@ extension GameScene: SKPhysicsContactDelegate {
 
         nodeA.contactDidEnd(nodeB as Contactable)
         nodeB.contactDidEnd(nodeA as Contactable)
+    }
+}
+
+// MARK: - MudBucket Methods
+extension GameScene {
+    func dropMudOverTruck(count: Int, target: TruckNode, duration: NSTimeInterval) {
+        let minX = Int(-0.5 * target.size.width)
+        let maxX = Int(0.5 * target.size.width)
+        let t = duration / Double(count)
+        let rangeX = Range(start: minX, end: maxX)
+        print(rangeX)
+
+        for i in 1...count {
+            runAction(SKAction.waitForDuration(Double(i) * t), completion: {
+                let mudDrop = MudNode.init(size: 5.0)
+                self.mudLayer.addChild(mudDrop)
+                mudDrop.position.x = CGFloat(self.randomNumber(rangeX))
+                print(mudDrop.position.x)
+            })
+        }
+
+    }
+
+    func randomNumber(from: Range<Int>) -> Int {
+        return from.startIndex + Int(arc4random_uniform(UInt32(from.endIndex - from.startIndex)))
     }
 }

@@ -64,7 +64,7 @@ class MudNode: SKShapeNode, Contactable {
     func applyFriction() {
         if isStuckOnTruck == true && isOverlappingMud == false {
             physicsBody?.velocity.dy *= 0.50 }
-        if isOverlappingMud == true {
+        if isOverlappingMud ==ç true {
             physicsBody?.velocity.dy *= 0.75
         }
     }
