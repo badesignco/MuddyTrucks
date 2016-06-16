@@ -9,8 +9,12 @@
 import SpriteKit
 
 class GameScene: SKScene {
+
+    var truck: TruckNode?
+
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        truck = self.childNodeWithName("truck") as! TruckNode
 
     }
     
