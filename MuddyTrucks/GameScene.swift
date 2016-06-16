@@ -25,14 +25,15 @@ class GameScene: SKScene {
         physicsWorld.contactDelegate = self
 
     }
-
-
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
         
     }
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        (mudLayer.children as! [MudNode]).forEach {
+            $0.applyFriction()
+        }
     }
 }
 

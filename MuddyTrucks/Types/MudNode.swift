@@ -10,6 +10,7 @@ import SpriteKit
 
 class MudNode: SKShapeNode, Contactable {
 
+    var isStuckOnTruck = false
     let contactType = ContactType.Mud
 
     init(size: CGFloat) {
@@ -26,7 +27,7 @@ class MudNode: SKShapeNode, Contactable {
         physicsBody?.collisionBitMask = 0
         physicsBody?.contactTestBitMask = 1
 
-    
+        userInteractionEnabled = true
 
     }
     
@@ -38,10 +39,23 @@ class MudNode: SKShapeNode, Contactable {
         print("I hit a truck!")
 //        physicsBody?.linearDamping = 1.0
         physicsBody?.affectedByGravity = false
-        physicsBody?.velocity = CGVector(dx: 0.0, dy: 50.0)
+        isStuckOnTruck = true
+        
     }
     func contactDidEnd(node: Contactable) {
         print("Off that truck!")
+        isStuckOnTruck = false
+    }
+
+    func applyFriction() {
+        if isStuckOnTruck == true {
+            physicsBody?.velocity.dy *= 0.66        }
+    }
+
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("Touched")
+        isStuckOnTruck = false
+        physicsBody?.affectedByGravity = true
     }
 
 }
