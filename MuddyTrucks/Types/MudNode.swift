@@ -8,7 +8,9 @@
 
 import SpriteKit
 
-class MudNode: SKShapeNode {
+class MudNode: SKShapeNode, Contactable {
+
+    let contactType = ContactType.Mud
 
     init(size: CGFloat) {
         super.init()
@@ -31,7 +33,13 @@ class MudNode: SKShapeNode {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func contactDidBegin(node: SKNode) {
+        <#code#>
+    }
 
+    func contactDidEnd(node: SKNode) {
+        <#code#>
+    }
 
 }
 

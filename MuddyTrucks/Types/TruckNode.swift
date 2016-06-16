@@ -8,7 +8,9 @@
 
 import SpriteKit
 
-class TruckNode: SKSpriteNode {
+class TruckNode: SKSpriteNode, Contactable {
+
+    let contactType = ContactType.Truck
 
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         let texture = SKTexture(imageNamed: "red_dumptruck")
@@ -25,5 +27,13 @@ class TruckNode: SKSpriteNode {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+
+    func contactDidBegin(node: SKNode) {
+        <#code#>
+    }
+
+    func contactDidEnd(node: SKNode) {
+        <#code#>
     }
 }

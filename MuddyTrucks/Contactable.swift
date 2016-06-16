@@ -6,6 +6,17 @@
 //  Copyright © 2016 Constellation Software. All rights reserved.
 //
 
-import SpriteKit {
+import SpriteKit
+
+enum ContactType {
+    case Mud
+    case Truck
+}
+
+protocol Contactable {
+    var contactType: ContactType { get }
+    func contactDidBegin(node: SKNode)
+
+    func contactDidEnd(node: SKNode)
 
 }
