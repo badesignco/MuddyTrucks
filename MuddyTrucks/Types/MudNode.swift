@@ -14,6 +14,7 @@ class MudNode: SKShapeNode, Contactable {
 
     init(size: CGFloat) {
         super.init()
+        zPosition = 1000
         let diameter = size * 2
         self.path = CGPathCreateWithEllipseInRect(CGRect(origin: CGPointZero, size: CGSize(width: diameter, height: diameter)), nil)
         fillColor = UIColor.brownColor()
@@ -33,12 +34,14 @@ class MudNode: SKShapeNode, Contactable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func contactDidBegin(node: SKNode) {
-        <#code#>
+    func contactDidBegin(node: Contactable) {
+        print("I hit a truck!")
+//        physicsBody?.linearDamping = 1.0
+        physicsBody?.affectedByGravity = false
+        physicsBody?.velocity = CGVector(dx: 0.0, dy: 50.0)
     }
-
-    func contactDidEnd(node: SKNode) {
-        <#code#>
+    func contactDidEnd(node: Contactable) {
+        print("Off that truck!")
     }
 
 }

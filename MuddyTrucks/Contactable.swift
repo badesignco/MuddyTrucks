@@ -15,8 +15,6 @@ enum ContactType {
 
 protocol Contactable {
     var contactType: ContactType { get }
-    func contactDidBegin(node: SKNode)
-
-    func contactDidEnd(node: SKNode)
-
+    func contactDidBegin(node: Contactable)
+    func contactDidEnd(node: Contactable)
 }

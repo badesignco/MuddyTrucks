@@ -40,6 +40,23 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
 
     func didBeginContact(contact: SKPhysicsContact) {
-        print("CONTACT")
+        guard
+            let nodeA = contact.bodyA.node as? Contactable,
+            let nodeB = contact.bodyB.node as? Contactable
+            else { return }
+
+        nodeA.contactDidBegin(nodeB as Contactable)
+        nodeB.contactDidBegin(nodeA as Contactable)
+
+    }
+
+    func didEndContact(contact: SKPhysicsContact) {
+        guard
+            let nodeA = contact.bodyA.node as? Contactable,
+            let nodeB = contact.bodyB.node as? Contactable
+            else { return }
+
+        nodeA.contactDidEnd(nodeB as Contactable)
+        nodeB.contactDidEnd(nodeA as Contactable)
     }
 }
