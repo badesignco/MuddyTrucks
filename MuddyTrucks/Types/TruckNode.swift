@@ -16,8 +16,9 @@ class TruckNode: SKSpriteNode {
         physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
         physicsBody?.affectedByGravity = false
         physicsBody?.allowsRotation = false
-        physicsBody?.collisionBitMask = 0
-        physicsBody?.contactTestBitMask = 0
+        physicsBody?.collisionBitMask = 1
+        physicsBody?.pinned = true
+        physicsBody?.contactTestBitMask = 1
         print("Truck ready to get muddy!")
 
     }

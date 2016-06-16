@@ -20,14 +20,26 @@ class GameScene: SKScene {
         mudLayer = childNodeWithName("MudLayer")!
 
         truckLayer.addChild(truck)
+        mudLayer.addChild(MudNode.init(size: 15.0))
+
+        physicsWorld.contactDelegate = self
 
     }
-    
+
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
         
     }
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+    }
+}
+
+// MARK: - GameScene will be the delegate for SKPhysicsWorld
+extension GameScene: SKPhysicsContactDelegate {
+
+    func didBeginContact(contact: SKPhysicsContact) {
+        print("CONTACT")
     }
 }
