@@ -11,6 +11,7 @@ import SpriteKit
 class MudNode: SKShapeNode, Contactable {
 
     var isStuckOnTruck = false
+    var isOverlappingMud = false
     let contactType = ContactType.Mud
 
     init(size: CGFloat) {
@@ -36,20 +37,36 @@ class MudNode: SKShapeNode, Contactable {
     }
 
     func contactDidBegin(node: Contactable) {
-        print("I hit a truck!")
-//        physicsBody?.linearDamping = 1.0
-        physicsBody?.affectedByGravity = false
-        isStuckOnTruck = true
+        switch node {
+        case is MudNode:
+            isOverlappingMud = true
+        case is TruckNode:
+            physicsBody?.affectedByGravity = false
+            isStuckOnTruck = true
+        default:
+            return
+        }
+
         
     }
     func contactDidEnd(node: Contactable) {
-        print("Off that truck!")
-        isStuckOnTruck = false
+        switch node {
+        case is MudNode:
+            isOverlappingMud = false
+        case is TruckNode:
+            isStuckOnTruck = false
+            physicsBody?.affectedByGravity = true
+        default:
+            return
+        }
     }
 
     func applyFriction() {
-        if isStuckOnTruck == true {
-            physicsBody?.velocity.dy *= 0.66        }
+        if isStuckOnTruck == true && isOverlappingMud == false {
+            physicsBody?.velocity.dy *= 0.50 }
+        if isOverlappingMud == true {
+            physicsBody?.velocity.dy *= 0.75
+        }
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

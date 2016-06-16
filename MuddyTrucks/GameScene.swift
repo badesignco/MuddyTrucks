@@ -20,7 +20,14 @@ class GameScene: SKScene {
         mudLayer = childNodeWithName("MudLayer")!
 
         truckLayer.addChild(truck)
-        mudLayer.addChild(MudNode.init(size: 15.0))
+        mudLayer.addChild(MudNode.init(size: 5.0))
+        runAction(SKAction.waitForDuration(1.0)) { 
+            self.mudLayer.addChild(MudNode.init(size: 5.0))
+            self.runAction(SKAction.waitForDuration(1.2)) {
+                self.mudLayer.addChild(MudNode.init(size: 5.0))
+            }
+        }
+
 
         physicsWorld.contactDelegate = self
 
