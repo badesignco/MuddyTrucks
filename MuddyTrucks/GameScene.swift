@@ -10,11 +10,16 @@ import SpriteKit
 
 class GameScene: SKScene {
 
-    var truck: TruckNode?
+    var truckLayer = SKNode()
+    var mudLayer = SKNode()
+    var truck = TruckNode()
 
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        truck = self.childNodeWithName("truck") as! TruckNode
+        truckLayer = childNodeWithName("TruckLayer")!
+        mudLayer = childNodeWithName("MudLayer")!
+
+        truckLayer.addChild(truck)
 
     }
     

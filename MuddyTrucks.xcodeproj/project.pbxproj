@@ -17,6 +17,7 @@
 		B55987F71D13181F006BA991 /* MuddyTrucksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55987F61D13181F006BA991 /* MuddyTrucksTests.swift */; };
 		B55988021D13181F006BA991 /* MuddyTrucksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55988011D13181F006BA991 /* MuddyTrucksUITests.swift */; };
 		B55988121D13207A006BA991 /* TruckNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55988111D13207A006BA991 /* TruckNode.swift */; };
+		B55988151D13247F006BA991 /* MudNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55988141D13247F006BA991 /* MudNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B55988011D13181F006BA991 /* MuddyTrucksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuddyTrucksUITests.swift; sourceTree = "<group>"; };
 		B55988031D13181F006BA991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55988111D13207A006BA991 /* TruckNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TruckNode.swift; path = Types/TruckNode.swift; sourceTree = "<group>"; };
+		B55988141D13247F006BA991 /* MudNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MudNode.swift; path = Types/MudNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				B55987DD1D13181F006BA991 /* AppDelegate.swift */,
-				B55987DF1D13181F006BA991 /* GameScene.sks */,
-				B55988131D1320A1006BA991 /* Types */,
-				B55987E11D13181F006BA991 /* GameScene.swift */,
 				B55987E31D13181F006BA991 /* GameViewController.swift */,
+				B55988161D132564006BA991 /* Scenes */,
+				B55988131D1320A1006BA991 /* Types */,
 				B55987E51D13181F006BA991 /* Main.storyboard */,
 				B55987E81D13181F006BA991 /* Assets.xcassets */,
 				B55987EA1D13181F006BA991 /* LaunchScreen.storyboard */,
@@ -137,9 +138,19 @@
 		B55988131D1320A1006BA991 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				B55988141D13247F006BA991 /* MudNode.swift */,
 				B55988111D13207A006BA991 /* TruckNode.swift */,
 			);
 			name = Types;
+			sourceTree = "<group>";
+		};
+		B55988161D132564006BA991 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B55987DF1D13181F006BA991 /* GameScene.sks */,
+				B55987E11D13181F006BA991 /* GameScene.swift */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55988151D13247F006BA991 /* MudNode.swift in Sources */,
 				B55987E21D13181F006BA991 /* GameScene.swift in Sources */,
 				B55988121D13207A006BA991 /* TruckNode.swift in Sources */,
 				B55987E41D13181F006BA991 /* GameViewController.swift in Sources */,

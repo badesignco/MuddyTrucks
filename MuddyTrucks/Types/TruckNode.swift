@@ -10,7 +10,6 @@ import SpriteKit
 
 class TruckNode: SKSpriteNode {
 
-
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         let texture = SKTexture(imageNamed: "red_dumptruck")
         super.init(texture: texture, color: SKColor.clearColor(), size: texture.size())
