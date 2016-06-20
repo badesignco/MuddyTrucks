@@ -73,7 +73,7 @@ extension GameScene {
 
         for i in 1...count {
             runAction(SKAction.waitForDuration(Double(i) * t), completion: {
-                let mudDrop = MudNode.init(size: 5.0)
+                let mudDrop = MudNode.init()
                 self.mudLayer.addChild(mudDrop)
                 mudDrop.position.x = CGFloat(self.randomNumber(rangeX))
                 print(mudDrop.position.x)

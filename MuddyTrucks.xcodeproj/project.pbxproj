@@ -19,6 +19,7 @@
 		B55988121D13207A006BA991 /* TruckNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55988111D13207A006BA991 /* TruckNode.swift */; };
 		B55988151D13247F006BA991 /* MudNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55988141D13247F006BA991 /* MudNode.swift */; };
 		B55988181D132C42006BA991 /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55988171D132C42006BA991 /* Contactable.swift */; };
+		B559881F1D15DBBE006BA991 /* MetaBallFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559881E1D15DBBE006BA991 /* MetaBallFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B55988111D13207A006BA991 /* TruckNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TruckNode.swift; path = Types/TruckNode.swift; sourceTree = "<group>"; };
 		B55988141D13247F006BA991 /* MudNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MudNode.swift; path = Types/MudNode.swift; sourceTree = "<group>"; };
 		B55988171D132C42006BA991 /* Contactable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contactable.swift; sourceTree = "<group>"; };
+		B559881E1D15DBBE006BA991 /* MetaBallFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaBallFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		B55987D11D13181F006BA991 = {
 			isa = PBXGroup;
 			children = (
+				B559881E1D15DBBE006BA991 /* MetaBallFilter.swift */,
 				B55987DC1D13181F006BA991 /* MuddyTrucks */,
 				B55987F51D13181F006BA991 /* MuddyTrucksTests */,
 				B55988001D13181F006BA991 /* MuddyTrucksUITests */,
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55988151D13247F006BA991 /* MudNode.swift in Sources */,
+				B559881F1D15DBBE006BA991 /* MetaBallFilter.swift in Sources */,
 				B55987E21D13181F006BA991 /* GameScene.swift in Sources */,
 				B55988181D132C42006BA991 /* Contactable.swift in Sources */,
 				B55988121D13207A006BA991 /* TruckNode.swift in Sources */,
@@ -533,6 +537,7 @@
 				B55988081D13181F006BA991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B55988091D13181F006BA991 /* Build configuration list for PBXNativeTarget "MuddyTrucksTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +546,7 @@
 				B559880B1D13181F006BA991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B559880C1D13181F006BA991 /* Build configuration list for PBXNativeTarget "MuddyTrucksUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +555,7 @@
 				B559880E1D13181F006BA991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

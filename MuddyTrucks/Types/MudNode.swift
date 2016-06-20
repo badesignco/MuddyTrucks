@@ -8,21 +8,17 @@
 
 import SpriteKit
 
-class MudNode: SKShapeNode, Contactable {
+class MudNode: SKSpriteNode, Contactable {
 
     var isStuckOnTruck = false
     var isOverlappingMud = false
     let contactType = ContactType.Mud
 
-    init(size: CGFloat) {
-        super.init()
+    init() {
+        let texture = SKTexture(imageNamed: "mudDrop")
+        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         zPosition = 1000
-        let diameter = size * 2
-        self.path = CGPathCreateWithEllipseInRect(CGRect(origin: CGPointZero, size: CGSize(width: diameter, height: diameter)), nil)
-        fillColor = UIColor.brownColor()
-        strokeColor = UIColor.blackColor()
-
-        physicsBody = SKPhysicsBody.init(circleOfRadius: size)
+        physicsBody = SKPhysicsBody.init(texture: texture, size: texture.size())
         physicsBody?.affectedByGravity = true
         physicsBody?.allowsRotation = false
         physicsBody?.collisionBitMask = 0
@@ -64,7 +60,7 @@ class MudNode: SKShapeNode, Contactable {
     func applyFriction() {
         if isStuckOnTruck == true && isOverlappingMud == false {
             physicsBody?.velocity.dy *= 0.50 }
-        if isOverlappingMud ==ç true {
+        if isOverlappingMud == true {
             physicsBody?.velocity.dy *= 0.75
         }
     }
