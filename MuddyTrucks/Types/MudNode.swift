@@ -30,6 +30,7 @@ class MudNode: SKSpriteNode, Contactable {
         physicsBody?.collisionBitMask = 0
         physicsBody?.contactTestBitMask = 1
 
+        setScale(UIScreen.mainScreen().scale)
         //userInteractionEnabled = true
 
     }

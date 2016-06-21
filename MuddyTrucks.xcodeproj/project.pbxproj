@@ -22,6 +22,7 @@
 		B559881F1D15DBBE006BA991 /* MetaBallFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559881E1D15DBBE006BA991 /* MetaBallFilter.swift */; };
 		B55988281D19C66F006BA991 /* Water.sks in Resources */ = {isa = PBXBuildFile; fileRef = B55988261D19C66F006BA991 /* Water.sks */; };
 		B55988291D19C66F006BA991 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B55988271D19C66F006BA991 /* spark.png */; };
+		B559882D1D19DE37006BA991 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559882C1D19DE37006BA991 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B559881E1D15DBBE006BA991 /* MetaBallFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaBallFilter.swift; sourceTree = "<group>"; };
 		B55988261D19C66F006BA991 /* Water.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Water.sks; sourceTree = "<group>"; };
 		B55988271D19C66F006BA991 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		B559882C1D19DE37006BA991 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B55988171D132C42006BA991 /* Contactable.swift */,
+				B559882C1D19DE37006BA991 /* Button.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				B55988181D132C42006BA991 /* Contactable.swift in Sources */,
 				B55988121D13207A006BA991 /* TruckNode.swift in Sources */,
 				B55987E41D13181F006BA991 /* GameViewController.swift in Sources */,
+				B559882D1D19DE37006BA991 /* Button.swift in Sources */,
 				B55987DE1D13181F006BA991 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

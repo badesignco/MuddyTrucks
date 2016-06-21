@@ -14,18 +14,21 @@ class GameScene: SKScene {
     var mudLayer = SKNode()
     var truck = TruckNode()
     var hose = SKEmitterNode()
+    var arrowButton = SKShapeNode()
     let textures = SKTextureAtlas(named: "Splats")
 
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
         truckLayer = childNodeWithName("TruckLayer")!
         mudLayer = childNodeWithName("MudLayer")!
+        arrowButton = childNodeWithName("GreenArrow")! as! SKShapeNode
+        arrowButton.userInteractionEnabled = true
+
         scene?.zPosition = 3
         truckLayer.zPosition = 1
         mudLayer.zPosition = 2
 
         truckLayer.addChild(truck)
-        dropMudOverTruck(15, target: truck, duration: 2.0)
+        dropMudOverTruck(25, target: truck, duration: 2.0)
 
         hose = SKEmitterNode(fileNamed: "Water")!
         hose.targetNode = self
@@ -39,7 +42,7 @@ class GameScene: SKScene {
         guard let location = touches.first?.locationInNode(self) else {
             return
         }
-
+        print(nodeAtPoint(location))
         hose.particleBirthRate = 150
         hose.position = location
 

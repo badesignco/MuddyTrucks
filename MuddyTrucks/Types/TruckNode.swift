@@ -16,6 +16,7 @@ class TruckNode: SKSpriteNode, Contactable {
         let texture = SKTexture(imageNamed: "red_dumptruck")
         super.init(texture: texture, color: SKColor.clearColor(), size: texture.size())
         physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
+
 //        physicsBody = SKPhysicsBody(rectangleOfSize: texture.size())
         physicsBody?.affectedByGravity = false
         physicsBody?.allowsRotation = false
@@ -23,7 +24,7 @@ class TruckNode: SKSpriteNode, Contactable {
         physicsBody?.pinned = true
         physicsBody?.contactTestBitMask = 1
         print("Truck ready to get muddy!")
-
+        setScale(UIScreen.mainScreen().scale)
     }
     
     required init?(coder aDecoder: NSCoder) {
