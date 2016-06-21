@@ -15,8 +15,8 @@ class TruckNode: SKSpriteNode, Contactable {
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         let texture = SKTexture(imageNamed: "red_dumptruck")
         super.init(texture: texture, color: SKColor.clearColor(), size: texture.size())
-//        physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
-        physicsBody = SKPhysicsBody(rectangleOfSize: texture.size())
+        physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
+//        physicsBody = SKPhysicsBody(rectangleOfSize: texture.size())
         physicsBody?.affectedByGravity = false
         physicsBody?.allowsRotation = false
         physicsBody?.collisionBitMask = 0

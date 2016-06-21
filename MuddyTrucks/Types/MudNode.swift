@@ -24,7 +24,7 @@ class MudNode: SKSpriteNode, Contactable {
         physicsBody?.collisionBitMask = 0
         physicsBody?.contactTestBitMask = 1
 
-        userInteractionEnabled = true
+        //userInteractionEnabled = true
 
     }
     

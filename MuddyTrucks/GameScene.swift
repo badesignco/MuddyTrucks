@@ -13,14 +13,17 @@ class GameScene: SKScene {
     var truckLayer = SKNode()
     var mudLayer = SKNode()
     var truck = TruckNode()
+    var hose = SKEmitterNode()
 
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         truckLayer = childNodeWithName("TruckLayer")!
         mudLayer = childNodeWithName("MudLayer")!
+        hose = SKEmitterNode(fileNamed: "Water")!
+
 
         truckLayer.addChild(truck)
-        dropMudOverTruck(100, target: truck, duration: 2.0)
+        dropMudOverTruck(25, target: truck, duration: 2.0)
 
 
         physicsWorld.contactDelegate = self
@@ -28,7 +31,14 @@ class GameScene: SKScene {
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
-        
+        let location = touches.first?.locationInNode(self)
+        addChild(hose)
+        hose.position = location!
+
+    }
+
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        hose.removeFromParent()
     }
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */

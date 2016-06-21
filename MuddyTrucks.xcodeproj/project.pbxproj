@@ -20,6 +20,8 @@
 		B55988151D13247F006BA991 /* MudNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55988141D13247F006BA991 /* MudNode.swift */; };
 		B55988181D132C42006BA991 /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55988171D132C42006BA991 /* Contactable.swift */; };
 		B559881F1D15DBBE006BA991 /* MetaBallFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559881E1D15DBBE006BA991 /* MetaBallFilter.swift */; };
+		B55988281D19C66F006BA991 /* Water.sks in Resources */ = {isa = PBXBuildFile; fileRef = B55988261D19C66F006BA991 /* Water.sks */; };
+		B55988291D19C66F006BA991 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B55988271D19C66F006BA991 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		B55988141D13247F006BA991 /* MudNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MudNode.swift; path = Types/MudNode.swift; sourceTree = "<group>"; };
 		B55988171D132C42006BA991 /* Contactable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contactable.swift; sourceTree = "<group>"; };
 		B559881E1D15DBBE006BA991 /* MetaBallFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaBallFilter.swift; sourceTree = "<group>"; };
+		B55988261D19C66F006BA991 /* Water.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Water.sks; sourceTree = "<group>"; };
+		B55988271D19C66F006BA991 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				B55987DF1D13181F006BA991 /* GameScene.sks */,
+				B55988261D19C66F006BA991 /* Water.sks */,
+				B55988271D19C66F006BA991 /* spark.png */,
 				B55987E11D13181F006BA991 /* GameScene.swift */,
 			);
 			name = Scenes;
@@ -273,9 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55987E01D13181F006BA991 /* GameScene.sks in Resources */,
+				B55988291D19C66F006BA991 /* spark.png in Resources */,
 				B55987EC1D13181F006BA991 /* LaunchScreen.storyboard in Resources */,
 				B55987E91D13181F006BA991 /* Assets.xcassets in Resources */,
 				B55987E71D13181F006BA991 /* Main.storyboard in Resources */,
+				B55988281D19C66F006BA991 /* Water.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
