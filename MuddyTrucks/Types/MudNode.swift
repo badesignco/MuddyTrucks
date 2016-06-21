@@ -14,11 +14,17 @@ class MudNode: SKSpriteNode, Contactable {
     var isOverlappingMud = false
     let contactType = ContactType.Mud
 
-    init() {
-        let texture = SKTexture(imageNamed: "mudDrop")
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
-        zPosition = 1000
-        physicsBody = SKPhysicsBody.init(texture: texture, size: texture.size())
+    init(atlas: SKTextureAtlas) {
+        let r = arc4random_uniform(UInt32(atlas.textureNames.count))
+        let textureName = atlas.textureNames[Int(r)]
+        let texture = atlas.textureNamed(textureName)
+
+        super.init(texture: texture, color: UIColor.brownColor(), size: texture.size())
+        //physicsBody = SKPhysicsBody.init(texture: texture, size: texture.size())
+        colorBlendFactor = 1.0
+        alpha = 0.9
+        blendMode = .Alpha
+        physicsBody = SKPhysicsBody.init(rectangleOfSize: texture.size())
         physicsBody?.affectedByGravity = true
         physicsBody?.allowsRotation = false
         physicsBody?.collisionBitMask = 0
@@ -65,8 +71,14 @@ class MudNode: SKSpriteNode, Contactable {
         }
     }
 
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         print("Touched")
+        isStuckOnTruck = false
+        physicsBody?.affectedByGravity = true
+    }
+
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         isStuckOnTruck = false
         physicsBody?.affectedByGravity = true
     }
